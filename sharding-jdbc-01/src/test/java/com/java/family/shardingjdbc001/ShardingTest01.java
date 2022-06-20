@@ -34,8 +34,15 @@ public class ShardingTest01 {
 
     @Test
     public void test2(){
-        Product product = productMapper.selectByProductId(730145430020554752L);
-        System.out.println(product);
+        for (int i = 0; i < 10; i++) {
+            Product product = Product.builder()
+                    .name("Spring Cloud Alibaba实战课程")
+                    .price(159L)
+                    .originAddress("码猿技术专栏")
+                    .shopId(1L)
+                    .build();
+            productMapper.insertProductBase(product);
+        }
     }
 
     @Test
