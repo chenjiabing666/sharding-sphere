@@ -52,10 +52,9 @@ public class ShardingTest01 {
                     .name("Spring Cloud Alibaba实战课程")
                     .price(159L)
                     .originAddress("码猿技术专栏")
-                    .shopId(1L)
+                    .shopId((long) new Random().nextInt(100))
                     .build();
             productMapper.insertProductBase(product);
-            productMapper.insertProductDescribe(product.getProductId(),"内容",product.getShopId());
         }
     }
 

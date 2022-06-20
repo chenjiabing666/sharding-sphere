@@ -12,7 +12,7 @@ spring:
   shardingsphere:
     datasource:
       # 数据源，这里配置两个，分别是ds1，ds2
-      names: ds1,ds2,ds3
+      names: ds1,ds2
       # ds1的配置信息,product_db1
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
@@ -25,13 +25,6 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:3306/product_db2?useUnicode=true&characterEncoding=utf-8
-        username: root
-        password: Nov2014
-      # ds3的配置信息，shop_db
-      ds3:
-        type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/shop_db?useUnicode=true&characterEncoding=utf-8
         username: root
         password: Nov2014
     # 分片的配置
@@ -70,15 +63,6 @@ spring:
             inline:
               sharding‐column: product_id
               algorithm‐expression: ds$->{product_id%2+1}
-        shop:
-          # 数据节点配置，采用Groovy表达式
-          actual-data-nodes: ds$->{1}.shop
-          # 主键生成策略
-          key-generator:
-            # 主键
-            column: shop_id
-            # 生成算法
-            type: SNOWFLAKE
     props:
       sql:
         # 日志显示具体的SQL

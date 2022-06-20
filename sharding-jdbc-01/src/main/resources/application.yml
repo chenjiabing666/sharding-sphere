@@ -32,14 +32,19 @@ spring:
       # 表的分片策略
       tables:
         product_base:
-          # 数据节点配置，采用Groovy表达式,ds1.product_base;ds2.product_base
-          actual-data-nodes: ds$->{1..2}.product_base
-          ## 分库的策略
+          # 数据节点配置，采用Groovy表达式，分库分表策略，这样是4个节点，ds1.product_base_1/ds1.product_base_2/ds2.product_base_1/ds2.product_base_2
+          actual-data-nodes: ds$->{1..2}.product_base_$->{1..2}
+          # 分表策略
+          table‐strategy:
+            inline:
+              # 分片键为店铺ID
+              sharding‐column: shop_id
+              # 分片策略取模
+              algorithm‐expression: product_base_$->{shop_id%2+1}
+          # 分库策略
           database‐strategy:
             inline:
-              ## 分片键
               sharding‐column: product_id
-              ## 分片算法，product_id%2=(0,1)+1 ->(1,2)
               algorithm‐expression: ds$->{product_id%2+1}
           # 主键生成策略
           key-generator:
@@ -49,7 +54,15 @@ spring:
             type: SNOWFLAKE
         product_description:
           # 数据节点配置，采用Groovy表达式
-          actual-data-nodes: ds$->{1..2}.product_description
+          actual-data-nodes: ds$->{1..2}.product_description_$->{1..2}
+          # 分表策略
+          table‐strategy:
+            inline:
+              # 分片键
+              sharding‐column: shop_id
+              # 分片算法
+              algorithm‐expression: product_description_$->{shop_id%2+1}
+          # 分库策略
           database‐strategy:
             inline:
               sharding‐column: product_id
