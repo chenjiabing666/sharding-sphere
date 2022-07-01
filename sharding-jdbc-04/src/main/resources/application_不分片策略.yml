@@ -34,7 +34,7 @@ spring:
         t_order:
           # 数据节点配置，采用Groovy表达式，分库分表策略，这样是4个节点，ds1.product_base_$_1/ds1.product_base_$_2/ds2.product_base_$_1/ds2.product_base_$_2
           actual-data-nodes: ds1.t_order_$->{1..2}
-          # 分表策略
+           #分表策略
           table‐strategy:
             none:
     props:

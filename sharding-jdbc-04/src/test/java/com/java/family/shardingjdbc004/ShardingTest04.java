@@ -166,4 +166,25 @@ public class ShardingTest04 {
         }
     }
 
+    @Test
+    public void test10(){
+        List<Long> userIds = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            userIds.add((Long) snowflake.generateKey());
+        }
+
+        for (int i = 0; i < 10; i++) {
+            Long userId = userIds.get(i % 2);
+            //唯一ID+userId后1位
+            Long orderId = Long.valueOf(snowflake.generateKey() + userId.toString().substring(userId.toString().length() - 1));
+            Order order = Order.builder()
+                    .userId(userId)
+                    .orderId(orderId)
+                    .price(1000L)
+                    .status(1)
+                    .build();
+            orderMapper.insert(order);
+        }
+    }
+
 }
