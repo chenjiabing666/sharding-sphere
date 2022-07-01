@@ -141,12 +141,11 @@ public class ShardingTest04 {
         // HintManager API 工具类实例
         HintManager hintManager = HintManager.getInstance();
         // 直接指定对应具体的数据库
-        hintManager.addDatabaseShardingValue("ds", 1);
-        // 设置表的分片健
-        hintManager.addTableShardingValue("t_order", 1);
-//        hintManager.addTableShardingValue("t_order", 2);
+//        hintManager.addDatabaseShardingValue("t_order", 1);
+        // 设置表的shardingvalue
+        hintManager.addTableShardingValue("t_order", 2);
         // 在读写分离数据库中，Hint 可以强制读主库
-        hintManager.setMasterRouteOnly();
+//        hintManager.setMasterRouteOnly();
 
         List<Long> userIds = new ArrayList<>();
         for (int i = 0; i < 2; i++) {

@@ -15,11 +15,12 @@ import java.util.stream.Collectors;
 public class TablesHintShardingAlgorithm implements HintShardingAlgorithm<Integer> {
     @Override
     public Collection<String> doSharding(Collection<String> availableTargetNames, HintShardingValue<Integer> shardingValue) {
-        //逻辑表
+        //逻辑表，t_order
         String logicTableName = shardingValue.getLogicTableName();
 
-        //分片值
+        //分片值 values=[1]
         Collection<Integer> values = shardingValue.getValues();
+        //t_order_1/t_order_2,t_order_1 and t_order_2   -》t_order_1
         return values.stream().map(value-> MessageFormat.format(logicTableName+"_{0}",value)).collect(Collectors.toSet());
     }
 }
