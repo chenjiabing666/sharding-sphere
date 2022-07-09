@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : 192.168.47.153:3306
- Source Schema         : product_db2
+ Source Schema         : product_db1
 
  Target Server Type    : MySQL
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 09/07/2022 15:18:14
+ Date: 09/07/2022 15:18:07
 */
 
 SET NAMES utf8mb4;

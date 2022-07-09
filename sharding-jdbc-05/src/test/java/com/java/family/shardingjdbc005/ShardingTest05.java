@@ -79,9 +79,8 @@ public class ShardingTest05 {
 
     @Test
     public void test5(){
-        for (int i = 0; i < 10; i++) {
-            int j = productMapper.countByShopId();
-        }
+        Product product = productMapper.selectByProductId(752556192521256960L);
+        System.out.println(product);
     }
 
 }
