@@ -1,0 +1,2 @@
+com.java.family.shardingjdbc003.encryptor.Sha256HexEncryptor
+com.java.family.shardingjdbc003.encryptor.Base64AssistedEncryptor
