@@ -62,7 +62,7 @@ spring:
                 # 存储密文的字段
                 cipherColumn: cipher_pwd
                 # 指定加密器
-                encryptor: encryptor_sha256
+                encryptor: encryptor_md5
               # 身份证号的逻辑列，使用aes这种可逆的加密算法
               id_card:
                 cipherColumn: id_card
