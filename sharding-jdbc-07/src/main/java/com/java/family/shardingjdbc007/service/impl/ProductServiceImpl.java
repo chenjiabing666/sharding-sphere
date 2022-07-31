@@ -18,7 +18,8 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
 
-//    @ShardingTransactionType(value = TransactionType.LOCAL)
+    //开启对XA事务支持
+    @ShardingTransactionType(value = TransactionType.XA)
     @Transactional
     @Override
     public int insertProduct() {
@@ -32,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
                     .build();
             productMapper.insertProductBase(product);
         }
-//        System.out.println(1/0);
+        System.out.println(1/0);
         return 0;
     }
 }

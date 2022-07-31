@@ -63,59 +63,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-
-<!--        Sharding-JDBC
-        <dependency>
-            <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>sharding-transaction-base-seata-at</artifactId>
-        </dependency>-->
-
-<!--        &lt;!&ndash;seata的依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>-->
-<!--            <exclusions>-->
-<!--                &lt;!&ndash; 排除依赖 指定版本和服务端一致 &ndash;&gt;-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.seata</groupId>-->
-<!--                    <artifactId>seata-all</artifactId>-->
-<!--                </exclusion>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.seata</groupId>-->
-<!--                    <artifactId>seata-spring-boot-starter</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash;1.3.0的seata依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.seata</groupId>-->
-<!--            <artifactId>seata-all</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>io.seata</groupId>-->
-<!--            <artifactId>seata-spring-boot-starter</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;nacos 服务发现&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;nacos 配置管理&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.apache.shardingsphere</groupId>-->
-<!--            <artifactId>sharding-jdbc-spring-namespace</artifactId>-->
-<!--        </dependency>-->
-
     </dependencies>
 </project>
