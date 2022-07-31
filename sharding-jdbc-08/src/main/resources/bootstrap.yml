@@ -1,0 +1,21 @@
+spring:
+  # Nacos 注册 配置
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        group: SEATA_GROUP
+        namespace: 729f3090-638e-4b45-bfde-b91312ffe3d0
+        username: nacos
+        password: nacos
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: SEATA_GROUP
+        namespace: 729f3090-638e-4b45-bfde-b91312ffe3d0
+        username: nacos
+        password: nacos
+  application:
+    name: springboot-sharding-jdbc-seata
+  profiles:
+    active: dev
